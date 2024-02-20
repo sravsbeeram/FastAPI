@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+
+  fastapi_app:
+    image: fastapi_app3
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      
+    ports:
+      - 8000:80
+
+    networks:
+
+        - test
+
+networks:
+
+  test:
+
+    external: true
